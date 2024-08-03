@@ -3,22 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Masonry from 'react-masonry-css';
 import Image from 'next/image';
-
-interface Item {
-  id: number;
-  type: 'image' | 'text' | 'link';
-  src?: string;
-  alt?: string;
-  content?: string;
-  href?: string;
-  onClick?: () => void;
-}
-
-const breakpoints = {
-  default: 3,
-  1100: 2,
-  700: 1,
-};
+import { items, breakpoints, Item } from '../data/items';
 
 const MasonryGrid: React.FC = () => {
   const [redirectUrl, setRedirectUrl] = useState<string | null>(null);
@@ -51,12 +36,9 @@ const MasonryGrid: React.FC = () => {
     }
   };
 
-  const items: Item[] = [
-    { id: 1, type: 'image', src: '/assets/bp.jpeg', alt: 'Image 1' },
-    { id: 2, type: 'text', content: 'This is a text card' },
-    { id: 3, type: 'link', content: 'Visit Profile', onClick: handleRedirect },
-    { id: 4, type: 'image', src: '/assets/bp.jpeg', alt: 'Image 2' },
-  ];
+  const updatedItems: Item[] = items.map(item =>
+    item.type === 'link' && item.content ? { ...item, onClick: handleRedirect } : item
+  );
 
   return (
     <Masonry
@@ -64,7 +46,7 @@ const MasonryGrid: React.FC = () => {
       className="flex -ml-4 w-auto"
       columnClassName="pl-4 bg-clip-padding"
     >
-      {items.map(item => (
+      {updatedItems.map(item => (
         <div key={item.id} className="mb-4 bg-white rounded-lg shadow-md p-4 text-center">
           {item.type === 'image' && item.src && item.alt && (
             <div className="relative w-full h-64">
