@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect } from 'react';
-import * as React from 'react'; // Add this line
+import * as React from 'react';
 
 interface RedirectProps {
   redirectUrl: string;
