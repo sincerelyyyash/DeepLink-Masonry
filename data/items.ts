@@ -1,11 +1,9 @@
-
 export interface ItemDetail {
   role?: string;
   company?: string;
   duration?: string;
   achievements?: string[];
 }
-
 export interface Item {
   id: number;
   type: 'image' | 'text' | 'link' | 'button' | 'profile' | 'project' | 'experience';
@@ -19,18 +17,11 @@ export interface Item {
   description?: string;
   details?: ItemDetail[];
 }
-
-export const breakpoints = {
-  default: 3,
-  1100: 2,
-  700: 1,
-};
-
 export const items: Item[] = [
   {
     id: 1,
     type: 'profile',
-    src: '/assets/bp.jpeg',
+    src: '/assets/bp.jpg',
     alt: 'Feather Xu',
     title: 'Feather Xu',
     subtitle: 'Product Designer',
@@ -39,24 +30,24 @@ export const items: Item[] = [
   {
     id: 2,
     type: 'image',
-    src: '/assets/bp.jpeg',
+    src: '/assets/map.png',
     alt: 'Map'
   },
-  {
-    id: 3,
-    type: 'project',
-    title: 'MarkO',
-    description: 'Collaboration system for footwear designers and engineers',
-    src: '/assets/bp.jpeg',
-    alt: 'MarkO Project'
-  },
-  {
-    id: 4,
-    type: 'project',
-    title: 'Independent Commute for Visually Impaired',
-    src: '/assets/bp.jpeg',
-    alt: 'Visually Impaired Project'
-  },
+  // {
+  //   id: 3,
+  //   type: 'project',
+  //   title: 'MarkO',
+  //   description: 'Collaboration system for footwear designers and engineers',
+  //   src: '/assets/shoe.jpg',
+  //   alt: 'MarkO Project'
+  // },
+  // {
+  //   id: 4,
+  //   type: 'project',
+  //   title: 'Independent Commute for Visually Impaired',
+  //   src: '/assets/bp.jpeg',
+  //   alt: 'Visually Impaired Project'
+  // },
   {
     id: 5,
     type: 'experience',
@@ -67,7 +58,7 @@ export const items: Item[] = [
         company: 'TikTok',
         duration: 'Jan 2021 - Dec 2021',
         achievements: [
-          'Designed and launched 7 features to improve TikTok Shop Merchant Platform\'s verification process efficiency by 35 % ',
+          'Designed and launched 7 features to improve TikTok Shop Merchant Platform\'s verification process efficiency by 35 %',
           'Led the design and launch of TikTok Shop\'s Open Platform landing website, resulting in a 150 % increase in click rate'
         ]
       },
@@ -76,7 +67,7 @@ export const items: Item[] = [
         company: 'MarkO',
         duration: 'May 2023 - Present',
         achievements: [
-          'Capitalized on AI technology to identified 3 key design opportunities in music creation flow, through collaboration with stakeholders and the founder.',
+          'Capitalized on AI technology to identify 3 key design opportunities in music creation flow, through collaboration with stakeholders and the founder.',
           'Led MCG user flow redesign for mobile experience, incorporating 6 usability tests to inform iterative prototype development.'
         ]
       },
@@ -92,6 +83,45 @@ export const items: Item[] = [
         ]
       }
     ]
-  }
+  },
+  // {
+  //   id: 7,
+  //   type: 'project',
+  //   title: 'AI-Powered Chatbot',
+  //   description: 'A conversational AI chatbot that can assist with customer support and FAQs.',
+  //   src: '/assets/ai.jpg',
+  //   alt: 'AI-Powered Chatbot'
+  // },
+  {
+    id: 8,
+    type: 'image',
+    src: '/assets/stack.jpg',
+    alt: 'Tech Stack'
+  },
+  {
+    id: 10,
+    type: 'project',
+    title: 'E-Commerce Platform',
+    description: 'A full-featured e-commerce platform with support for online payments, user accounts, and product management.',
+    src: '/assets/ecommerce.jpg',
+    alt: 'E-Commerce Platform'
+  },
+  {
+    id: 11,
+    type: 'experience',
+    title: 'Freelance Web Developer',
+    details: [
+      {
+        role: 'Freelance Web Developer',
+        company: 'Self-Employed',
+        duration: 'Jan 2019 - Present',
+        achievements: [
+          'Developed over 20 custom websites for various clients, improving their online presence and user engagement.',
+          'Implemented SEO best practices that resulted in a 40% increase in organic traffic for client websites.'
+        ]
+      }
+    ]
+  },
+
 ];
 
