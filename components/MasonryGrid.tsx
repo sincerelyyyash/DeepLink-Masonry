@@ -175,7 +175,7 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, breakpoints }) => {
         );
 
       default:
-        return null; // Do nothing if the item type is not recognized
+        return null;
     }
   };
 

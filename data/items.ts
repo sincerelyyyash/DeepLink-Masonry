@@ -1,3 +1,10 @@
+export const breakpoints = {
+  320: 1,
+  480: 2,
+  768: 3,
+  1024: 4,
+};
+
 export interface ItemDetail {
   role?: string;
   company?: string;
