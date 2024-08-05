@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useEffect, useState } from 'react';
 
@@ -7,15 +7,19 @@ const RedirectPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch('https://uat.api.soshals.app/portfolio/reroute?user=kritarthmittal');
-      const data = await res.json();
-      setRedirectUrl(data.redirectUrl);
+      try {
+        const res = await fetch('https://uat.api.soshals.app/portfolio/reroute?user=kritarthmittal');
+        const data = await res.json();
+        setRedirectUrl(data.redirectUrl);
+      } catch (error) {
+        console.error('Error fetching redirect URL:', error);
+      }
     };
 
     fetchData();
   }, []);
 
-  useEffect(() => {
+  const handleRedirect = () => {
     if (redirectUrl) {
       const userAgent = window.navigator.userAgent || window.navigator.vendor;
       const isAndroid = /android/i.test(userAgent);
@@ -27,6 +31,10 @@ const RedirectPage = () => {
         window.open(redirectUrl, '_blank');
       }
     }
+  };
+
+  useEffect(() => {
+    handleRedirect();
   }, [redirectUrl]);
 
   return (
@@ -37,3 +45,4 @@ const RedirectPage = () => {
 };
 
 export default RedirectPage;
+
