@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useEffect, useState } from 'react';
 
@@ -25,8 +25,17 @@ const RedirectPage = () => {
       const isAndroid = /android/i.test(userAgent);
       const isIOS = /iPad|iPhone|iPod/.test(userAgent);
 
-      if (isAndroid || isIOS) {
+      if (isAndroid) {
+        const appUrl = redirectUrl.replace('https://', 'intent://');
+        window.location.href = appUrl;
+        setTimeout(() => {
+          window.location.href = redirectUrl;
+        }, 1000);
+      } else if (isIOS) {
         window.location.href = redirectUrl;
+        setTimeout(() => {
+          window.location.href = redirectUrl;
+        }, 1000);
       } else {
         window.open(redirectUrl, '_blank');
       }
@@ -38,8 +47,8 @@ const RedirectPage = () => {
   }, [redirectUrl]);
 
   return (
-    <div>
-      <h1>Redirecting...</h1>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <h1 className="text-2xl font-bold">Redirecting...</h1>
     </div>
   );
 };
