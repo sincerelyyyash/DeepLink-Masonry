@@ -12,21 +12,7 @@ interface MasonryGridProps {
 }
 
 const MasonryGrid: React.FC<MasonryGridProps> = ({ items, breakpoints }) => {
-  const [redirectUrl, setRedirectUrl] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchRedirectUrl = async () => {
-      try {
-        const res = await fetch('https://uat.api.soshals.app/portfolio/reroute?user=kritarthmittal');
-        const data = await res.json();
-        setRedirectUrl(data.redirectUrl);
-      } catch (error) {
-        console.error('Error fetching redirect URL:', error);
-      }
-    };
-
-    fetchRedirectUrl();
-  }, []);
+  const redirectUrl = 'https://x.com/sincerelyyyash';
 
   const handleRedirect = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -81,7 +67,7 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ items, breakpoints }) => {
                   onClick={handleRedirect}
                   className="mt-4 px-4 py-2 bg-black border text-white rounded-lg hover:bg-white hover:text-black hover:border-black"
                 >
-                  Watch Now
+                  Visit Profile
                 </button>
               </div>
             </motion.div>
