@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Deep Linking and Masonry Grid Project
+
+This project is a Next.js application that demonstrates deep linking based on device type (Android/iOS/Desktop) and a Masonry Grid layout. The project fetches a redirect URL from an API and handles the redirection based on the device. Additionally, it includes a responsive Masonry Grid that dynamically arranges content.
+
+## Features
+
+1. **Deep Linking**
+   * **Device-Specific Redirection**
+     * **Android**: Attempts to open the link in the native app using `intent://` scheme. Falls back to the web version if the app is not installed.
+     * **iOS**: Attempts to open the link in the native app using the regular URL scheme. Falls back to the web version if the app is not installed.
+     * **Desktop**: Opens the link in a new tab.
+
+2. **Masonry Grid Layout**
+   * **Dynamic Content Arrangement**: The Masonry Grid layout allows for dynamically arranged cards with varying content types (image, text, link, etc.) and aspect ratios. The layout is fully responsive and adapts to different screen sizes.
 
 ## Getting Started
 
-First, run the development server:
+### Project Structure
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **/app**: Contains the main application components.
+- **/redirect**: Handles the deep linking redirection logic.
+- **/components**: Contains reusable components like the Masonry Grid.
+- **/public**: Public assets like images, fonts, etc.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Prerequisites
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* **Node.js**: Ensure that you have Node.js installed on your machine. You can download it from [nodejs.org](https://nodejs.org).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Installation
 
-## Learn More
+1. **Clone the Repository**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   git clone https://github.com/yourusername/your-repo-name.git
+2. **Navigate to the Project Directory**
+   ```bash
+   cd masonryUiApp
+3. **Install Dependencies**
+   ```bash
+   npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Running the Project
+  **Start the Development Server**
+   ```bash
+   npm install
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
