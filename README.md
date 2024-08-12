@@ -31,7 +31,7 @@ This project is a Next.js application that demonstrates deep linking based on de
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
+   git clone https://github.com/sincerelyyyash/DeepLink-Masonry
 2. **Navigate to the Project Directory**
    ```bash
    cd masonryUiApp
